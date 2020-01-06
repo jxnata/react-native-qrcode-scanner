@@ -221,6 +221,7 @@ export default class QRCodeScanner extends Component {
       notAuthorizedView,
       pendingAuthorizationView,
       cameraType,
+      flashMode
     } = this.props;
     const { isAuthorized, isAuthorizationChecked } = this.state;
     if (isAuthorized) {
@@ -236,7 +237,7 @@ export default class QRCodeScanner extends Component {
               style={[styles.camera, this.props.cameraStyle]}
               onBarCodeRead={this._handleBarCodeRead.bind(this)}
               type={this.props.cameraType}
-              flashMode={this.state.flashMode}
+              flashMode={flashMode}
               captureAudio={false}
               {...this.props.cameraProps}
             >
